@@ -46,22 +46,25 @@ with data:
     #result= sp.solveset(f,domain=sp.S.Reals)
 
 
-    st.subheader('x的结果:')
-    result=get_result(a1,a2,b1,b2,n)
+    try:
+        st.subheader('x的结果:')
+        result=get_result(a1,a2,b1,b2,n)
 
-    if len(result)==0:
-        st.text("无实数解")
-    else:
-        for i in result:
-            st.markdown("* "+str(i.evalf()))
+        if len(result)==0:
+            st.text("无实数解")
+        else:
+            for i in result:
+                st.markdown("* "+str(i.evalf()))
 
-        input_fun = "x*(" + str(a2) + "-x)*((" + str(b2) + "-" + str(n) + "*x))**" + str(n) + "-x*(" + str(a1) + "-x)*((" + str(
-            b1) + "-" + str(n) + "*x))**" + str(n) + ""
+            input_fun = "x*(" + str(a2) + "-x)*((" + str(b2) + "-" + str(n) + "*x))**" + str(n) + "-x*(" + str(a1) + "-x)*((" + str(
+                b1) + "-" + str(n) + "*x))**" + str(n) + ""
 
 
-        #st.text("图像")
-        #x = np.linspace(-1, 1, 30)
-        #input_fun=input_fun.replace("^","**")
-        #y = eval(input_fun)
-        #x = np.linspace(-1, 1, 30)
-        #draw_plot(x,y)
+            #st.text("图像")
+            #x = np.linspace(-1, 1, 30)
+            #input_fun=input_fun.replace("^","**")
+            #y = eval(input_fun)
+            #x = np.linspace(-1, 1, 30)
+            #draw_plot(x,y)
+    except BaseException:
+        st.error("请重新输入")
