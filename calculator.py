@@ -59,9 +59,9 @@ with data:
             b1) + "-" + str(n) + "*x))**" + str(n) + ""
 
 
-        st.text("图像")
-        x = np.linspace(-1, 1, 30)
-        input_fun=input_fun.replace("^","**")
-        y = eval(input_fun)
-        x = np.linspace(-1, 1, 30)
-        draw_plot(x,y)
+        #st.text("图像")
+        #x = np.linspace(-1, 1, 30)
+        #input_fun=input_fun.replace("^","**")
+        #y = eval(input_fun)
+        #x = np.linspace(-1, 1, 30)
+        #draw_plot(x,y)
