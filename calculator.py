@@ -17,7 +17,7 @@ with data:
     f = input_fun
     result = sp.solveset(f,domain=sp.S.Reals)
 
-    st.subtitle('x的结果:')
+    st.subheader('x的结果:')
 
     if len(result)==0:
         st.text("无实数解")
