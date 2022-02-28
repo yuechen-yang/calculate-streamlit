@@ -1,6 +1,20 @@
 import streamlit as st
 import sympy as sp
 
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+
+# Plot the function
+def draw_plot(x,y):
+  fig = plt.figure()
+  plt.plot(x, y, color='skyblue')
+  plt.xlabel('x', fontweight='bold')
+  plt.ylabel('y', fontweight='bold')
+  plt.grid(linestyle = '--')
+  return st.pyplot(fig)
+
 header= st.container()
 data=st.container()
 
@@ -25,3 +39,12 @@ with data:
         for i in result:
             st.markdown("* "+str(i.evalf()))
 
+
+        st.text("图像")
+        #min=st.slider("最小值:",min_value=-20,max_value=20,value=-5)
+        #max = st.slider("最大值:", min_value=min, max_value=50, value=5)
+        x = np.linspace(-3, 3, 50)
+        input_fun=input_fun.replace("^","**")
+        y = eval(input_fun)
+        #x = np.linspace(-3, 3, 50)
+        draw_plot(x,y)
