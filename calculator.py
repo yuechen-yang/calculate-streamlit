@@ -27,7 +27,7 @@ header= st.container()
 data=st.container()
 
 with header:
-    st.title('刘教授小课堂')
+    st.title('配合物平衡常数的测定')
 
 with data:
     st.subheader('输入数据')
